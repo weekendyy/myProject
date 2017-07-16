@@ -46,84 +46,90 @@ $(function(){
       case 0:
           if(boxIndex==3){
 
-          }
-          $("body>div").eq(3).animate({
-            top:0
-          },500,function(){
-            allHide();
-            page1show();
-            boxIndex=3;
-            $("body>div").eq(2).css({
-              top:0
-            });
-            $("body>div").eq(1).css({
-              top:0
-            });
-          });
-          allHide();
-          break;
-      case 1:
-          if(boxIndex==3){
-            $("body>div").eq(3).animate({
-              top:-boxH
-            },500,function(){
-              boxIndex=2;
-              allHide();
-              page2show();
-            });
           }else{
-            $("body>div").eq(2).animate({
+            $("body>div").eq(3).animate({
               top:0
             },500,function(){
-              boxIndex=2;
+              allHide();
+              page1show();
+              boxIndex=3;
+              $("body>div").eq(2).css({
+                top:0
+              });
               $("body>div").eq(1).css({
                 top:0
               });
-              $("body>div").eq(0).css({
-                top:0
-              });
-              allHide();
-              page2show();
             });
+            allHide();
+          }
+          
+          break;
+      case 1:
+          if(boxIndex!=2){
+            if(boxIndex==3){
+              $("body>div").eq(3).animate({
+                top:-boxH
+              },500,function(){
+                boxIndex=2;
+                allHide();
+                page2show();
+              });
+            }else{
+              $("body>div").eq(2).animate({
+                top:0
+              },500,function(){
+                boxIndex=2;
+                $("body>div").eq(1).css({
+                  top:0
+                });
+                $("body>div").eq(0).css({
+                  top:0
+                });
+                allHide();
+                page2show();
+              });
+            }
           }
           break;
       case 2:
-          if(boxIndex>1){
-            $("body>div").eq(3).animate({
-              top:-boxH
-            },500);
-            $("body>div").eq(2).animate({
-              top:-boxH
-            },500,function(){
-              boxIndex=1;
-              allHide();
-              page3show();
-            });
-            
-          }else{
-            $("body>div").eq(1).animate({
-              top:0
-            },500,function(){
-              boxIndex=1;
-              allHide();
-              page3show();
-            });
-            
+          if(boxIndex!=1){
+            if(boxIndex>1){
+              $("body>div").eq(3).animate({
+                top:-boxH
+              },500);
+              $("body>div").eq(2).animate({
+                top:-boxH
+              },500,function(){
+                boxIndex=1;
+                allHide();
+                page3show();
+              });
+            }else{
+              $("body>div").eq(1).animate({
+                top:0
+              },500,function(){
+                boxIndex=1;
+                allHide();
+                page3show();
+              });
+            }
           }
           break;
       case 3:
-          $("body>div").eq(1).animate({
-              top:-boxH
-            },500);
-          $("body>div").eq(2).animate({
-              top:-boxH
-            },500);
-          $("body>div").eq(3).animate({
-              top:-boxH
-            },500);
-          boxIndex=0;
-          allHide();
-          page4show();
+          if(boxIndex!=0){
+            $("body>div").eq(1).animate({
+                top:-boxH
+              },500);
+            $("body>div").eq(2).animate({
+                top:-boxH
+              },500);
+            $("body>div").eq(3).animate({
+                top:-boxH
+              },500);
+            boxIndex=0;
+            allHide();
+            page4show();
+          }
     }
   });
   function page1show(){
